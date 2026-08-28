@@ -129,6 +129,7 @@ jobs:
 
       # ==================== 步骤 3：配置 D1 数据库 ====================
       - name: Create or verify D1 Database
+        if: false
         working-directory: ./backend
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -177,6 +178,7 @@ jobs:
           echo "database_id=$DATABASE_ID" >> $GITHUB_ENV
 
       - name: Initialize D1 Database schema
+        if: false
         working-directory: ./backend
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
